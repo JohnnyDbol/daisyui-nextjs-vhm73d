@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* components/falling-words.css */
+
+.box {
+  width: 100%;
+  height: 500px;
+  border: 2px solid #333;
+  overflow: hidden;
+  position: relative;
+}
+
+.falling-word {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fallAnimation 5s linear infinite;
+}
+
+.correct {
+  color: red;
+}
+
+.untyped {
+  color: black;
+}
+
+.hidden-text-box {
+  position: absolute;
+  top: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes fallAnimation {
+  0% {
+    top: -30px;
+  }
+  100% {
+    top: 100%;
+  }
+}
